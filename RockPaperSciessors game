@@ -1,0 +1,31 @@
+import random  
+# Define variables for choices.
+rock = 1
+paper = 2
+scissors = 3
+
+# Define variables for players.
+player = ""
+computer = ""
+
+# Get the player's choice.
+while True:
+    try:
+        player = int(input("Please select one: 1 for Rock, 2 for Paper, 3 for Scissors: "))
+        if player in [1, 2, 3]:
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+    except ValueError:
+        print("Invalid input. Please enter 1, 2, or 3.")
+
+# Generate the computer's choice.
+computer = random.randint(1, 3)
+print ("Computer choice:", computer)
+# Determine the winner.
+if player == computer:
+    print("It's a tie!")
+elif (player == rock and computer == scissors) or (player == paper and computer == rock) or (player == scissors and computer == paper):
+    print("You win!")
+else:
+    print("Computer wins!")
